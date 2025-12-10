@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -37,13 +37,13 @@
           cursorBlink: true,
           theme: { background: '#263238' },
           rendererType: 'canvas',
-          scrollback: Number.MAX_SAFE_INTEGER
+          scrollback: Number.MAX_SAFE_INTEGER,
         };
         var term = new Terminal(baseTerminalOptions);
         term.open(document.getElementById('terminal'));
         var searchAddon = new SearchAddon.SearchAddon();
         var searchbarAddon = new SearchBarAddon.SearchBarAddon({
-          searchAddon
+          searchAddon,
         });
         term.loadAddon(searchAddon);
         term.loadAddon(searchbarAddon);
@@ -54,7 +54,7 @@
         term.writeln(`An addon for xterm.js that enables searching the buffer. This addon requires xterm.js and xterm-search-addon v4+.
             \r\nHello from \x1B[1;3;31mxterm.js`);
 
-        document.getElementsByTagName('button')[0].addEventListener('click', function() {
+        document.getElementsByTagName('button')[0].addEventListener('click', function () {
           searchbarAddon.show();
         });
       </script>
