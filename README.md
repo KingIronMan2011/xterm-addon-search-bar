@@ -24,7 +24,7 @@ import { SearchAddonBar } from 'xterm-addon-search-bar';
 
 const terminal = new Terminal();
 const searchAddon = new SearchAddon();
-const searchAddonBar = new SearchAddonBar({searchAddon});
+const searchAddonBar = new SearchAddonBar({ searchAddon });
 terminal.loadAddon(searchAddon);
 terminal.loadAddon(searchAddonBar);
 // Can be uesd in a action as click

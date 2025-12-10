@@ -68,18 +68,18 @@ export class SearchBarAddon implements ITerminalAddon {
     });
     this.on('.search-bar__btn.next', 'click', () => {
       this.searchAddon.findNext(this.searchKey, {
-        incremental: false
+        incremental: false,
       });
     });
     this.on('.search-bar__btn.prev', 'click', () => {
       this.searchAddon.findPrevious(this.searchKey, {
-        incremental: false
+        incremental: false,
       });
     });
     this.on('.search-bar__input', 'keyup', (e: any) => {
       this.searchKey = (e.target as HTMLInputElement).value;
       this.searchAddon.findNext(this.searchKey, {
-        incremental: e.key !== `Enter`
+        incremental: e.key !== `Enter`,
       });
     });
     (this.searchBarElement.querySelector('input') as HTMLInputElement).select();

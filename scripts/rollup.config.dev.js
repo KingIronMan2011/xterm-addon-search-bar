@@ -15,15 +15,15 @@ export default {
       file: `lib/${name}.js`,
       format: 'umd',
       name: global,
-      sourcemap: true
+      sourcemap: true,
     },
   ],
   plugins: [
     ...baseConfig.plugins,
     serve({
       port: 7000,
-      contentBase: ['pages','.'],
+      contentBase: ['pages', '.'],
       verbose: true,
-    })
-  ]
+    }),
+  ],
 };

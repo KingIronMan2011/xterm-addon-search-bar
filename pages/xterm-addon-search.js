@@ -1,32 +1,32 @@
-!(function(e, t) {
+!(function (e, t) {
   'object' == typeof exports && 'object' == typeof module
     ? (module.exports = t())
     : 'function' == typeof define && define.amd
-    ? define([], t)
-    : 'object' == typeof exports
-    ? (exports.SearchAddon = t())
-    : (e.SearchAddon = t());
-})(window, function() {
-  return (function(e) {
+      ? define([], t)
+      : 'object' == typeof exports
+        ? (exports.SearchAddon = t())
+        : (e.SearchAddon = t());
+})(window, function () {
+  return (function (e) {
     var t = {};
     function i(r) {
       if (t[r]) return t[r].exports;
       var n = (t[r] = { i: r, l: !1, exports: {} });
-      return e[r].call(n.exports, n, n.exports, i), (n.l = !0), n.exports;
+      return (e[r].call(n.exports, n, n.exports, i), (n.l = !0), n.exports);
     }
     return (
       (i.m = e),
       (i.c = t),
-      (i.d = function(e, t, r) {
+      (i.d = function (e, t, r) {
         i.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r });
       }),
-      (i.r = function(e) {
-        'undefined' != typeof Symbol &&
+      (i.r = function (e) {
+        ('undefined' != typeof Symbol &&
           Symbol.toStringTag &&
           Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-          Object.defineProperty(e, '__esModule', { value: !0 });
+          Object.defineProperty(e, '__esModule', { value: !0 }));
       }),
-      (i.t = function(e, t) {
+      (i.t = function (e, t) {
         if ((1 & t && (e = i(e)), 8 & t)) return e;
         if (4 & t && 'object' == typeof e && e && e.__esModule) return e;
         var r = Object.create(null);
@@ -39,53 +39,53 @@
             i.d(
               r,
               n,
-              function(t) {
+              function (t) {
                 return e[t];
-              }.bind(null, n)
+              }.bind(null, n),
             );
         return r;
       }),
-      (i.n = function(e) {
+      (i.n = function (e) {
         var t =
           e && e.__esModule
-            ? function() {
+            ? function () {
                 return e.default;
               }
-            : function() {
+            : function () {
                 return e;
               };
-        return i.d(t, 'a', t), t;
+        return (i.d(t, 'a', t), t);
       }),
-      (i.o = function(e, t) {
+      (i.o = function (e, t) {
         return Object.prototype.hasOwnProperty.call(e, t);
       }),
       (i.p = ''),
       i((i.s = 0))
     );
   })([
-    function(e, t, i) {
+    function (e, t, i) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var r = (function() {
+      var r = (function () {
         function e() {
           this._linesCacheTimeoutId = 0;
         }
         return (
-          (e.prototype.activate = function(e) {
+          (e.prototype.activate = function (e) {
             this._terminal = e;
           }),
-          (e.prototype.dispose = function() {}),
-          (e.prototype.findNext = function(e, t) {
+          (e.prototype.dispose = function () {}),
+          (e.prototype.findNext = function (e, t) {
             if (!this._terminal) throw new Error('Cannot use addon until it has been loaded');
-            if (!e || 0 === e.length) return this._terminal.clearSelection(), !1;
+            if (!e || 0 === e.length) return (this._terminal.clearSelection(), !1);
             var i,
               r = 0,
               n = 0;
             if (this._terminal.hasSelection()) {
               var o = !!t && t.incremental;
-              (i = this._terminal.getSelectionPosition()),
+              ((i = this._terminal.getSelectionPosition()),
                 (n = o ? i.startRow : i.endRow),
-                (r = o ? i.startColumn : i.endColumn);
+                (r = o ? i.startColumn : i.endColumn));
             }
             this._initLinesCache();
             var s = { startRow: n, startCol: r },
@@ -105,17 +105,17 @@
               );
             return !(a || !i) || this._selectResult(a);
           }),
-          (e.prototype.findPrevious = function(e, t) {
+          (e.prototype.findPrevious = function (e, t) {
             if (!this._terminal) throw new Error('Cannot use addon until it has been loaded');
-            if (!e || 0 === e.length) return this._terminal.clearSelection(), !1;
+            if (!e || 0 === e.length) return (this._terminal.clearSelection(), !1);
             var i,
               r,
               n = this._terminal.buffer.baseY + this._terminal.rows,
               o = this._terminal.cols,
               s = !!t && t.incremental;
-            this._terminal.hasSelection() &&
+            (this._terminal.hasSelection() &&
               ((n = (r = this._terminal.getSelectionPosition()).startRow), (o = r.startColumn)),
-              this._initLinesCache();
+              this._initLinesCache());
             var a = { startRow: n, startCol: o };
             if (
               ((s && (i = this._findInLine(e, a, t, !1)) && i.row === n && i.col === o) ||
@@ -137,40 +137,40 @@
               );
             return !(i || !r) || this._selectResult(i);
           }),
-          (e.prototype._initLinesCache = function() {
+          (e.prototype._initLinesCache = function () {
             var e = this,
               t = this._terminal;
-            this._linesCache ||
+            (this._linesCache ||
               ((this._linesCache = new Array(t.buffer.length)),
-              (this._cursorMoveListener = t.onCursorMove(function() {
+              (this._cursorMoveListener = t.onCursorMove(function () {
                 return e._destroyLinesCache();
               })),
-              (this._resizeListener = t.onResize(function() {
+              (this._resizeListener = t.onResize(function () {
                 return e._destroyLinesCache();
               }))),
               window.clearTimeout(this._linesCacheTimeoutId),
-              (this._linesCacheTimeoutId = window.setTimeout(function() {
+              (this._linesCacheTimeoutId = window.setTimeout(function () {
                 return e._destroyLinesCache();
-              }, 15e3));
+              }, 15e3)));
           }),
-          (e.prototype._destroyLinesCache = function() {
-            (this._linesCache = void 0),
+          (e.prototype._destroyLinesCache = function () {
+            ((this._linesCache = void 0),
               this._cursorMoveListener &&
                 (this._cursorMoveListener.dispose(), (this._cursorMoveListener = void 0)),
               this._resizeListener &&
                 (this._resizeListener.dispose(), (this._resizeListener = void 0)),
               this._linesCacheTimeoutId &&
-                (window.clearTimeout(this._linesCacheTimeoutId), (this._linesCacheTimeoutId = 0));
+                (window.clearTimeout(this._linesCacheTimeoutId), (this._linesCacheTimeoutId = 0)));
           }),
-          (e.prototype._isWholeWord = function(e, t, i) {
+          (e.prototype._isWholeWord = function (e, t, i) {
             return !(
               (0 !== e && -1 === ' ~!@#$%^&*()+`-=[]{}|;:"\',./<>?'.indexOf(t[e - 1])) ||
               (e + i.length !== t.length &&
                 -1 === ' ~!@#$%^&*()+`-=[]{}|;:"\',./<>?'.indexOf(t[e + i.length]))
             );
           }),
-          (e.prototype._findInLine = function(e, t, i, r) {
-            void 0 === i && (i = {}), void 0 === r && (r = !1);
+          (e.prototype._findInLine = function (e, t, i, r) {
+            (void 0 === i && (i = {}), void 0 === r && (r = !1));
             var n = this._terminal,
               o = t.startRow,
               s = t.startCol,
@@ -191,7 +191,7 @@
                 d = void 0;
               if (r)
                 for (; (d = c.exec(h.slice(0, s))); )
-                  (u = c.lastIndex - d[0].length), (e = d[0]), (c.lastIndex -= e.length - 1);
+                  ((u = c.lastIndex - d[0].length), (e = d[0]), (c.lastIndex -= e.length - 1));
               else
                 (d = c.exec(h.slice(s))) &&
                   d[0].length > 0 &&
@@ -210,12 +210,12 @@
                   var v = _.getCell(p);
                   if (!v) break;
                   var m = v.char;
-                  m && m.length > 1 && (u -= m.length - 1), 0 === v.width && u++;
+                  (m && m.length > 1 && (u -= m.length - 1), 0 === v.width && u++);
                 }
               return { term: e, col: u, row: o };
             }
           }),
-          (e.prototype._translateBufferLineToStringWithWrap = function(e, t) {
+          (e.prototype._translateBufferLineToStringWithWrap = function (e, t) {
             var i,
               r = this._terminal,
               n = '';
@@ -224,19 +224,19 @@
               i = !!o && o.isWrapped;
               var s = r.buffer.getLine(e);
               if (!s) break;
-              (n += s.translateToString(!i && t).substring(0, r.cols)), e++;
+              ((n += s.translateToString(!i && t).substring(0, r.cols)), e++);
             } while (i);
             return n;
           }),
-          (e.prototype._selectResult = function(e) {
+          (e.prototype._selectResult = function (e) {
             var t = this._terminal;
-            if (!e) return t.clearSelection(), !1;
+            if (!e) return (t.clearSelection(), !1);
             if (
               (t.select(e.col, e.row, e.term.length),
               e.row >= t.buffer.viewportY + t.rows || e.row < t.buffer.viewportY)
             ) {
               var i = e.row - t.buffer.viewportY;
-              (i -= Math.floor(t.rows / 2)), t.scrollLines(i);
+              ((i -= Math.floor(t.rows / 2)), t.scrollLines(i));
             }
             return !0;
           }),
@@ -244,7 +244,7 @@
         );
       })();
       t.SearchAddon = r;
-    }
+    },
   ]);
 });
 //# sourceMappingURL=xterm-addon-search.js.map

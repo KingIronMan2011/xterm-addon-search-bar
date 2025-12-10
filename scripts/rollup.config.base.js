@@ -13,33 +13,33 @@ export default {
     postcss({
       extract: false,
       minimize: isProductionEnv,
-      extensions: ['.css']
+      extensions: ['.css'],
     }),
     alias({
-      resolve: ['.ts']
+      resolve: ['.ts'],
     }),
     nodeResolve(),
     replace({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
     }),
     typescript({
       exclude: 'node_modules/**',
-      declarationDir:'./typings'
+      declarationDir: './typings',
     }),
     commonjs({
-      include: 'node_modules/**'
-    })
+      include: 'node_modules/**',
+    }),
   ],
   output: [
     {
       format: 'cjs',
       file: 'xterm-addon-search-bar',
-      sourcemap: true
+      sourcemap: true,
     },
     {
       format: 'es',
       file: 'xterm-addon-search-bar',
-      sourcemap: true
-    }
-  ]
+      sourcemap: true,
+    },
+  ],
 };

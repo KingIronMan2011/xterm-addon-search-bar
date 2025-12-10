@@ -21,6 +21,7 @@
     "clean": "rimraf lib",
     "start": "yarn run clean && cross-env NODE_ENV=development rollup -w -c scripts/rollup.config.dev.js",
     "build": "yarn run clean && cross-env NODE_ENV=production rollup -c scripts/rollup.config.prod.js",
+    "format": "prettier --write .",
     "test": "jest",
     "release": "standard-version"
   },

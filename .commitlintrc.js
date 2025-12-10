@@ -1,9 +1,6 @@
 'use strict';
 
 module.exports = {
-  extends: [
-    'cz'
-  ],
-  rules: {
-  }
+  extends: ['cz'],
+  rules: {},
 };

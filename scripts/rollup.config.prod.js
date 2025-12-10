@@ -23,15 +23,15 @@ export default [
       {
         file: `lib/${name}.cjs.js`,
         format: 'cjs',
-        banner
+        banner,
       },
       {
         file: `lib/${name}.esm.js`,
         format: 'es',
-        banner
-      }
+        banner,
+      },
     ],
-    plugins: [...baseConfig.plugins, filesize()]
+    plugins: [...baseConfig.plugins, filesize()],
   },
   {
     ...baseConfig,
@@ -40,17 +40,17 @@ export default [
         file: `lib/${name}.js`,
         format: 'umd',
         name: global,
-        banner
-      }
+        banner,
+      },
     ],
     plugins: [
       ...baseConfig.plugins,
       uglify({
         compress: {
-          drop_console: true
-        }
+          drop_console: true,
+        },
       }),
-      filesize()
-    ]
-  }
+      filesize(),
+    ],
+  },
 ];
