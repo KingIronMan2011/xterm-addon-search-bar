@@ -1,5 +1,5 @@
 {
-  "name": "xterm-addon-search-bar",
+  "name": "xterm-addon-search-bar-upgraded",
   "version": "0.2.0",
   "global": "SearchBarAddon",
   "main": "lib/xterm-addon-search-bar.js",
@@ -13,8 +13,8 @@
     "xterm-search-addon",
     "xterm-search-bar-addon"
   ],
-  "author": "yinshuxun",
-  "url": "https://github.com/yinshuxun/xterm-addon-search-bar",
+  "author": "KingIronMan2011",
+  "url": "https://github.com/KingIronMan2011/xterm-addon-search-bar-upgraded",
   "license": "MIT",
   "scripts": {
     "cz": "git-cz",
