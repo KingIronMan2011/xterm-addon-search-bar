@@ -22,8 +22,7 @@
     "start": "yarn run clean && cross-env NODE_ENV=development rollup -w -c scripts/rollup.config.dev.js",
     "build": "yarn run clean && cross-env NODE_ENV=production rollup -c scripts/rollup.config.prod.js",
     "format": "prettier --write .",
-    "test": "jest",
-    "release": "standard-version"
+    "test": "jest"
   },
   "husky": {
     "hooks": {
@@ -89,7 +88,6 @@
     "rollup-plugin-typescript2": "^0.36.0",
     "rollup-plugin-uglify": "^6.0.4",
     "serve": "^14.2.5",
-    "standard-version": "^9.5.0",
     "typescript": "^5.9.3",
     "uglify-js": "^3.17.4",
     "@xterm/xterm": "^5.5.0",
