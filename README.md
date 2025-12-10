@@ -12,7 +12,7 @@ An addon for [xterm.js](https://github.com/xtermjs/xterm.js) that enables show s
 ## Install
 
 ```bash
-npm install --save xterm-addon-search-bar
+npm install --save xterm-addon-search-bar-upgraded
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ npm install --save xterm-addon-search-bar
 ```ts
 import { Terminal } from 'xterm';
 import { SearchAddon } from 'xterm-addon-search';
-import { SearchAddonBar } from 'xterm-addon-search-bar';
+import { SearchAddonBar } from 'xterm-addon-search-bar-upgraded';
 
 const terminal = new Terminal();
 const searchAddon = new SearchAddon();
