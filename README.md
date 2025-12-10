@@ -4,8 +4,8 @@
 
 [![Build Status](https://github.com/KingIronMan2011/xterm-addon-search-bar-upgraded/workflows/ci/badge.svg?branch=master&event=push)](https://github.com/KingIronMan2011/xterm-addon-search-bar-upgraded/actions)
 [![Build Status](https://github.com/KingIronMan2011/xterm-addon-search-bar-upgraded/workflows/publish/badge.svg?branch=master&event=push)](https://github.com/KingIronMan2011/xterm-addon-search-bar-upgraded/actions)
-[![NPM](https://img.shields.io/npm/v/xterm-addon-search-bar.svg)](https://www.npmjs.com/package/xterm-addon-search-bar)
-![License](https://img.shields.io/npm/l/xterm-addon-search-bar.svg)
+[![NPM](https://img.shields.io/npm/v/xterm-addon-search-bar-upgraded.svg)](https://www.npmjs.com/package/xterm-addon-search-bar-upgraded)
+![License](https://img.shields.io/npm/l/xterm-addon-search-bar-upgraded.svg)
 
 An addon for [xterm.js](https://github.com/xtermjs/xterm.js) that enables show search bar in terminal. This addon requires xterm.js & xterm-addon-search v4+.
 
