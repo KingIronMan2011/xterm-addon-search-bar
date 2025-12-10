@@ -12,7 +12,7 @@ const { name, version, author, global } = packageJson;
 
 const banner =
   `${'/*!\n' + ' * '}${name}.js v${version}\n` +
-  ` * (c) 2018-${new Date().getFullYear()} ${author}\n` +
+  ` * (c) 2025-${new Date().getFullYear()} ${author}\n` +
   ` * Released under the MIT License.\n` +
   ` */`;
 
