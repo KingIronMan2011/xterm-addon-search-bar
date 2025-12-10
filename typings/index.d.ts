@@ -1,6 +1,8 @@
 import { ITerminalAddon, Terminal } from '@xterm/xterm';
 import { ISearchOptions, SearchAddon } from '@xterm/addon-search';
 import './index.css';
+
+declare module 'xterm-addon-search-bar-upgraded';
 export interface SearchBarOption extends ISearchOptions {
   searchAddon: SearchAddon;
 }
