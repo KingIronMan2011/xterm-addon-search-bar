@@ -57,8 +57,10 @@
     "rxjs-compat": "^6.6.7"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.5",
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
+    "@types/node": "^24.10.2",
     "ansi_up": "^6.0.6",
     "babel-core": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
