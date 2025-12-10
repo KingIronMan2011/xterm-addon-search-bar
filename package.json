@@ -78,6 +78,7 @@
     "commitizen": "^4.3.1",
     "commitlint-config-cz": "^0.13.3",
     "cross-env": "^10.1.0",
+    "cssnano": "^6.0.1",
     "cz-customizable": "^7.5.1",
     "husky": "^9.1.7",
     "jest": "^30.2.0",
