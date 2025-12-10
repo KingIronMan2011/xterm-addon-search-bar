@@ -1,9 +1,14 @@
 import filesize from 'rollup-plugin-filesize';
-import uglify from 'rollup-plugin-uglify';
-import { minify } from 'uglify-es';
+import { uglify } from 'rollup-plugin-uglify';
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-import baseConfig from './rollup.config.base';
-import { name, version, author, global } from '../package.json';
+import baseConfig from './rollup.config.base.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const packageJson = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf-8'));
+const { name, version, author, global } = packageJson;
 
 const banner =
   `${'/*!\n' + ' * '}${name}.js v${version}\n` +
@@ -40,14 +45,11 @@ export default [
     ],
     plugins: [
       ...baseConfig.plugins,
-      uglify(
-        {
-          compress: {
-            drop_console: true
-          }
-        },
-        minify
-      ),
+      uglify({
+        compress: {
+          drop_console: true
+        }
+      }),
       filesize()
     ]
   }
