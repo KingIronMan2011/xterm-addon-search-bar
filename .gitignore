@@ -49,3 +49,7 @@ pids
 
 # Project specific stuff
 temp
+
+# Build artifacts copied for preview
+pages/lib/
+pages/node_modules/
