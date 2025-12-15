@@ -31,4 +31,4 @@ terminal.loadAddon(searchAddonBar);
 searchAddonBar.show();
 ```
 
-See the full [API](https://github.com/yinshuxun/xterm-addon-search-bar/typings/index.d.ts) for more advanced usage
+See the full [API](https://github.com/KingIronMan2011/xterm-addon-search-bar/blob/main/typings/index.d.ts) for more advanced usage
