@@ -1,6 +1,6 @@
 {
   "name": "@kingironman2011/xterm-addon-search-bar",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "global": "SearchBarAddon",
   "main": "lib/@kingironman2011/xterm-addon-search-bar.js",
   "module": "lib/@kingironman2011/xterm-addon-search-bar.esm.js",
